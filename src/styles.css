@@ -8,6 +8,66 @@ body {
 
 section {
   width: 600px;
-  height: 700px;
+  height: 650px;
   border: 1px solid #000000;
+  font-size: 30px;
+}
+
+.blank {
+  margin: 30px 25px;
+  width: 550px;
+  height: 80px;
+  border: 1px solid #000000;
+}
+
+.symbols {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sym {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  height: 70px;
+  background-color: #808080;
+  font-size: 20px;
+}
+
+.low {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 570px;
+  height: 470px;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 345px;
+  height: 450px;
+}
+
+.num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 5px 0px 25px;
+  width: 115px;
+  height: 70px;
+  background-color: whitesmoke;
+}
+
+.equal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0px 0px 40px 20px;
+  width: 115px;
+  height: 410px;
+  background-color: skyblue;
 }
