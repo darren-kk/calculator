@@ -7,32 +7,38 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <h1>Calculator</h1>
     <section>
-      <div class="blank"></div>
+
+      <form class="input">
+        <input type="text" class="input_blank">
+      </form>
+
       <div class="symbols">
-        <div class="sym">+</div>
-        <div class="sym">-</div>
-        <div class="sym">x</div>
-        <div class="sym">%</div>
+        <button type="button" class="symbols_btn add">+</button>
+        <button type="button" class="symbols_btn minus">-</button>
+        <button type="button" class="symbols_btn multi">x</button>
+        <button type="button" class="symbols_btn divide">%</button>
       </div>
+
       <div class="low">
         <div class="numbers">
-          <div class="num">7</div>
-          <div class="num">8</div>
-          <div class="num">9</div>
-          <div class="num">4</div>
-          <div class="num">5</div>
-          <div class="num">6</div>
-          <div class="num">1</div>
-          <div class="num">2</div>
-          <div class="num">3</div>
-          <div class="num">0</div>
-          <div class="num">.</div>
-          <div class="num">C</div>
+          <button type="button" class="num" id="num7">7</button>
+          <button type="button" class="num" id="num8">8</button>
+          <button type="button" class="num" id="num9">9</button>
+          <button type="button" class="num" id="num4">4</button>
+          <button type="button" class="num" id="num5">5</button>
+          <button type="button" class="num" id="num6">6</button>
+          <button type="button" class="num" id="num1">1</button>
+          <button type="button" class="num" id="num2">2</button>
+          <button type="button" class="num" id="num3">3</button>
+          <button type="button" class="num" id="num0">0</button>
+          <button type="button" class="num" id="numdot">.</button>
+          <button type="button" class="num" id="numc">C</button>
         </div>
-        <div class="equal">=</div>
+        <button type="button" class="equal">=</button>
       </div>
     </section>
 
