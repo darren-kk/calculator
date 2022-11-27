@@ -16,24 +16,37 @@ const addElement = document.querySelector('.add');
 const minusElement = document.querySelector('.minus');
 const multiElement = document.querySelector('.multi');
 const divideElement = document.querySelector('.divide');
+const equalElement = document.querySelector('.equal');
+
 let numClickResult1 = "";
-let symbols = "";
+let numClickResult2 = "";
+let symbols = undefined;
 
 const numClick = function(event) {
-  numClickResult1 += event.target.textContent;
-  console.log(numClickResult1);
-  inputElement.value = numClickResult1;
+  if (symbols === undefined) {
+    numClickResult1 += event.target.textContent;
+    console.log(numClickResult1);
+    inputElement.value = numClickResult1;  
+    return numClickResult1;
+  }
+
+  if (symbols !== undefined) {
+    numClickResult2 += event.target.textContent;
+    console.log(numClickResult2);
+    inputElement.value = numClickResult2;  
+    return numClickResult2;
+  }
 
   if (numClickResult1.includes('.')) {
     numdotElement.removeEventListener('click', numClick);
   }
-  
-  return numClickResult1;
 }
 
 const clearHandler = function() {
   inputElement.value = "";
   numClickResult1 = "";
+  numClickResult2 = "";
+  symbols = undefined;
 }
 
 const calculateHandler = function(event) {
@@ -42,6 +55,25 @@ const calculateHandler = function(event) {
   }
   console.log(symbols)
   return symbols;
+}
+
+const equalHandler = function() {
+  let result = 0
+  switch (symbols) {
+    case '+':
+    result = Number(numClickResult1) + Number(numClickResult2);
+    break;
+    case '-':
+    result = Number(numClickResult1) - Number(numClickResult2);
+    break;
+    case 'x':
+    result = Number(numClickResult1) * Number(numClickResult2);
+    break;
+    case '%':
+    result = Number(numClickResult1) / Number(numClickResult2);
+    break;
+  }
+  inputElement.value = result;
 }
 
 num1Element.addEventListener('click', numClick);
@@ -61,3 +93,5 @@ addElement.addEventListener('click', calculateHandler);
 minusElement.addEventListener('click', calculateHandler);
 multiElement.addEventListener('click', calculateHandler);
 divideElement.addEventListener('click', calculateHandler);
+
+equalElement.addEventListener('click', equalHandler);
