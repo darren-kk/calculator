@@ -25,14 +25,12 @@ let symbols = undefined;
 const numClick = function(event) {
   if (symbols === undefined) {
     numClickResult1 += event.target.textContent;
-    console.log(numClickResult1);
     inputElement.value = numClickResult1;  
     return numClickResult1;
   }
 
   if (symbols !== undefined) {
     numClickResult2 += event.target.textContent;
-    console.log(numClickResult2);
     inputElement.value = numClickResult2;  
     return numClickResult2;
   }
@@ -53,26 +51,44 @@ const calculateHandler = function(event) {
   if (event.target) {
     symbols = event.target.textContent;
   }
-  console.log(symbols)
+
   return symbols;
 }
 
 const equalHandler = function() {
   let result = 0
+
+  if (symbols === undefined) {
+    inputElement.value = Number(numClickResult1);
+  }
+
   switch (symbols) {
     case '+':
     result = Number(numClickResult1) + Number(numClickResult2);
+    numClickResult1 = result;
+    numClickResult2 = "";
+    symbols = undefined;
     break;
     case '-':
     result = Number(numClickResult1) - Number(numClickResult2);
+    numClickResult1 = result;
+    numClickResult2 = "";
+    symbols = undefined;
     break;
     case 'x':
     result = Number(numClickResult1) * Number(numClickResult2);
+    numClickResult1 = result;
+    numClickResult2 = "";
+    symbols = undefined;
     break;
     case '%':
     result = Number(numClickResult1) / Number(numClickResult2);
+    numClickResult1 = result;
+    numClickResult2 = "";
+    symbols = undefined;
     break;
   }
+  
   inputElement.value = result;
 }
 
