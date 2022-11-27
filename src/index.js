@@ -9,6 +9,7 @@ const num8Element = document.querySelector("#num8")
 const num9Element = document.querySelector("#num9")
 const num0Element = document.querySelector("#num0")
 const numdotElement = document.querySelector("#numdot")
+const numCElement = document.querySelector("#numc")
 const inputElement = document.querySelector(".input_blank")
 const numsElement = document.querySelectorAll(".num")
 const addElement = document.querySelector('#add')
@@ -26,6 +27,11 @@ const numClick = function(event) {
   return numClickResult1;
 }
 
+const clearHandler = function() {
+  inputElement.value = "";
+  numClickResult1 = "";
+}
+
 num1Element.addEventListener('click', numClick)
 num2Element.addEventListener('click', numClick)
 num3Element.addEventListener('click', numClick)
@@ -37,7 +43,7 @@ num8Element.addEventListener('click', numClick)
 num9Element.addEventListener('click', numClick)
 num0Element.addEventListener('click', numClick)
 numdotElement.addEventListener('click', numClick)
-
+numCElement.addEventListener('click', clearHandler)
 
 
 
