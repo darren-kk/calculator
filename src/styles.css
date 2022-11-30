@@ -13,6 +13,11 @@ section {
   font-size: 30px;
 }
 
+button {
+  border: 0.5px solid black;
+  border-radius: 20px;
+}
+
 .input_blank {
   display: flex;
   justify-content: end;
